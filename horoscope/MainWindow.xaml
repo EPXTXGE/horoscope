@@ -5,20 +5,55 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:horoscope"
         mc:Ignorable="d"
-        Title="Выбор цвета" Height="305.494" Width="490.13" Background="White" >
+        Title="TabControl" Height="305.494" Width="490.13" Background="#FFD4D0C8" >
     <Grid >
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
+        <TabControl x:Name="products" Background="#FFB2ACA9">
+            <TabItem x:Name="nameTab" Background="#FFD4D0C8">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse Height="10" Width="10" Fill="Black" />
+                        <TextBlock Margin="5">Name</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <StackPanel>
+                        <RadioButton IsChecked="True">iPhone S6</RadioButton>
+                        <RadioButton>LG G 4</RadioButton>
+                        <RadioButton>Lumia 550</RadioButton>
+                    </StackPanel>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="imageTab">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Rectangle Height="10" Width="10" Fill="Black" />
+                        <TextBlock Margin="5">Image</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <InkCanvas>
+                        <Image Source="Resources/111.png" Width="350"></Image>
+                    </InkCanvas>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="contactUsTab">
+                <TabItem.Content>
+                    <Canvas>
+                        <TextBox Canvas.Left="93" Width="140" Canvas.Top="10"/>
+                        <Label Content="Name" Canvas.Left="51" Canvas.Top="3" Height="25" Width="42" HorizontalAlignment="Right"/>
+                        <TextBox Canvas.Left="93" Canvas.Top="51" Width="140"/>
+                        <Button Name="OK" Content="OK" Canvas.Left="84" Canvas.Top="100" Width="60" Click="OK_Click"/>
+                        <Label Content="Email" Canvas.Left="51" Canvas.Top="44" Height="25" Width="42"/>
+                    </Canvas>
+                </TabItem.Content>
 
-        <GroupBox Header="Выбрать цвет" Padding="10" FontSize="20" Margin="10">
-            <StackPanel>
-                <RadioButton x:Name="rBlue" Margin="5"  Content="Синий" Checked="rBlue_Checked"/>
-                <RadioButton x:Name="rYellow" Margin="5" Content="Жёлтый" Checked="rYellow_Checked"/>
-                <RadioButton x:Name="rOrange" Margin="5" Content="Оранжевый" Checked="rOrange_Checked"/>
-            </StackPanel>
-        </GroupBox>
-        <Rectangle Name="recColor" Grid.Column="1"  HorizontalAlignment="Left" Height="180" Margin="25" Stroke="Black" VerticalAlignment="Top" Width="150"/>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Rectangle Height="10" Width="10" Fill="Black" />
+                        <TextBlock Margin="5">Contact Us</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
