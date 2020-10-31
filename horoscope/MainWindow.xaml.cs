@@ -24,5 +24,22 @@ namespace horoscope
         {
             InitializeComponent();
         }
+        private void rBlue_Checked(object sender, RoutedEventArgs e)
+        {
+            recColor.Fill = Brushes.Blue;
+        }
+
+        private void rYellow_Checked(object sender, RoutedEventArgs e)
+        {
+            recColor.Fill = Brushes.Yellow;
+        }
+
+        private void rOrange_Checked(object sender, RoutedEventArgs e)
+        {
+            recColor.Fill = Brushes.Orange;
+        }
+
+
     }
+
 }
